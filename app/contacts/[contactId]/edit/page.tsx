@@ -12,7 +12,7 @@ export default async function EditContactPage({ params }: PageProps) {
   const contactId = (await params).contactId;
   return (
     <Suspense fallback={<Skeleton />}>
-      <ContactForm contactId={contactId} />;
+      <ContactForm contactId={contactId} />
     </Suspense>
   );
 }
