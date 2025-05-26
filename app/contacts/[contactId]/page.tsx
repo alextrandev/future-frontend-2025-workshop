@@ -1,9 +1,9 @@
 import Image from 'next/image';
+import DeleteContactButton from '@/app/contacts/[contactId]/edit/_components/DeleteContactButton';
+import LinkButton from '@/components/ui/LinkButton';
 import { getContact } from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import Favorite from './_components/Favorite';
-import LinkButton from '@/components/ui/LinkButton';
-import DeleteContactButton from '@/app/contacts/[contactId]/edit/_components/DeleteContactButton';
 import type { Contact } from '@prisma/client';
 
 type PageProps = {
