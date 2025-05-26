@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import LinkButton from '@/components/ui/LinkButton';
-import getContact from '@/data/services/getContact';
+import { getContact } from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import Favorite from './_components/Favorite';
 import type { Contact } from '@prisma/client';

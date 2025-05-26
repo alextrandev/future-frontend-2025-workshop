@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import LinkButton from '@/components/ui/LinkButton';
 import TextArea from '@/components/ui/TextArea';
-import getContact from '@/data/services/getContact';
+import { getContact } from '@/data/services/getContact';
 import type { Contact } from '@prisma/client';
 
 export default async function ContactForm({ contactId }: { contactId: string }) {
