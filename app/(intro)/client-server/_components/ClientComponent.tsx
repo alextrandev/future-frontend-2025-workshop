@@ -5,6 +5,7 @@ import Button from '@/components/ui/Button';
 type Props = {
   children?: React.ReactNode;
   content?: React.ReactNode;
+  mutateData: () => Promise<string>;
 };
 
 export default function ClientComponent(props: Props) {
@@ -13,7 +14,10 @@ export default function ClientComponent(props: Props) {
       ClientComponent
       <div>{props.content}</div>
       {props.children}
-      <Button onClick={() => { alert('Button clicked!') }}>Click Me</Button>
+      <Button onClick={async () => {
+        const result = await props.mutateData();
+        return alert(result)
+      }}>Click Me</Button>
     </div>
   )
 }
