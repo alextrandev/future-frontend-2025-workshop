@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import LinkButton from '@/components/ui/LinkButton';
+import getContact from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import Favorite from './_components/Favorite';
 import type { Contact } from '@prisma/client';
@@ -13,20 +14,7 @@ type PageProps = {
 
 export default async function ContactPage({ params }: PageProps) {
   const contactId = (await params).contactId;
-
-  const contact: Contact = {
-    avatar: '',
-    createdAt: new Date(),
-    email: '',
-    favorite: true,
-    first: 'John',
-    github: 'johndoe',
-    id: contactId,
-    last: 'Doe',
-    notes: 'This is a note.',
-    position: 'Software Engineer',
-    updatedAt: new Date(),
-  };
+  const contact = await getContact(contactId) as Contact;
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row">
