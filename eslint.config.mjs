@@ -95,7 +95,6 @@ const eslintConfig = [
       ],
       'no-console': 'warn',
       'no-redeclare': 'warn',
-      quotes: ['warn', 'single'],
       'react-compiler/react-compiler': 'error',
       'react/display-name': 'error',
       'react/jsx-key': 'warn',
