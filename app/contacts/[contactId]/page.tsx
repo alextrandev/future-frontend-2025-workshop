@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import LinkButton from '@/components/ui/LinkButton';
 import { getContact } from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import Favorite from './_components/Favorite';
+import LinkButton from '@/components/ui/LinkButton';
+import DeleteContactButton from '@/app/contacts/[contactId]/edit/_components/DeleteContactButton';
 import type { Contact } from '@prisma/client';
 
 type PageProps = {
@@ -67,11 +67,9 @@ export default async function ContactPage({ params }: PageProps) {
           <LinkButton theme="secondary" href={`/contacts/${contactId}/edit`}>
             Edit
           </LinkButton>
-          <Button type="submit" theme="destroy">
-            Delete
-          </Button>
+          <DeleteContactButton contactId={contact.id} />
         </div>
       </div>
-    </div>
+    </div >
   );
 }
